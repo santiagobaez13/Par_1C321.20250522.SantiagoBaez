@@ -1,13 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package par_1c321.pkg20250522.santiagobaez;
 
-/**
- *
- * @author Santiago
- */
-public class Carguero {
-    
+
+
+public class Carguero extends Nave {
+
+    private int capacidadCarga;
+
+    public Carguero(String nombre, int capacidad, int anio, int carga) {
+        super(nombre, capacidad, anio);
+        if (carga < 100) {
+            this.capacidadCarga = 100;
+        } else if (carga > 500) {
+            this.capacidadCarga = 500;
+        } else {
+            this.capacidadCarga = carga;
+        }
+    }
+
+    @Override
+    public void iniciarMision() {
+        System.out.println(nombre + " inicia misión de transporte de carga.");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Carga: " + capacidadCarga + " toneladas";
+    }
 }
