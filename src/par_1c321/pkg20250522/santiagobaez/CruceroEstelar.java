@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package par_1c321.pkg20250522.santiagobaez;
 
-/**
- *
- * @author Santiago
- */
-public class CruceroEstelar {
-    
+public class CruceroEstelar extends Nave {
+    private int cantidadPasajeros;
+
+    public CruceroEstelar(String nombre, int capacidad, int anio, int pasajeros) {
+        super(nombre, capacidad, anio);
+        this.cantidadPasajeros = pasajeros;
+    }
+
+    @Override
+    public void iniciarMision() {
+        System.out.println(nombre + "es un crucero espacial, no realiza misiones");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Pasajeros: " + cantidadPasajeros;
+    }
 }
+
